@@ -61,8 +61,8 @@
         .video-wrapper {
             width: 100%;
             height: 100%;
-            max-width: calc(100vh * (1080 / 1080)); 
-            aspect-ratio: 1080 / 1080;
+            max-width: calc(100vh * (1020 / 1380)); 
+            aspect-ratio: 1020 / 1380;
             position: relative;
         }
 
@@ -74,7 +74,7 @@
         
         .play-overlay {
             position: absolute;
-            top: 50%;
+            top: 67%;
             left: 50%;
             transform: translate(-50%, -50%);
             background: rgba(0, 0, 0, 0.6);
@@ -263,15 +263,15 @@
 <body>
     <section id="hero-section">
         <div class="video-wrapper">
-            <img style="padding:20px" width=100% src="https://codehs.com/uploads/c0937f4af9924133c276f8611b2dda2e">
-            <!--<video id="event-video" playsinline>-->
-            <!--    <source src="https://codehs.com/uploads/6081c0aac6e859da2cfe774f61da38e7" type="video/mp4">-->
-            <!--    Your browser does not support the video tag.-->
-            <!--</video>-->
+            <!--<img style="padding:20px" width=100% src="https://codehs.com/uploads/c0937f4af9924133c276f8611b2dda2e">-->
+            <video id="event-video" playsinline>
+                <source src="https://codehs.com/uploads/57d2fd3b33faac9db81787508ccc919f" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
 
-            <!--<button id="play-overlay-btn" class="play-overlay">-->
-            <!--    <span class="play-icon">▶</span>-->
-            <!--</button>-->
+            <button id="play-overlay-btn" class="play-overlay">
+                <span class="play-icon">▶</span>
+            </button>
         </div>
     </section>
 
@@ -359,18 +359,6 @@
         </div>
     </section>
 
-    <!--<section class="content-section">-->
-    <!--    <div class="container">-->
-    <!--        <h2>Event Brochure</h2>-->
-    <!--        <p>Flip through our digital schedule and interactive guide below.</p>-->
-            
-            <!--<div class="flipbook-container">-->
-            <!--    <iframe src="https://online.fliphtml5.com/PopeFest/PopeFest_Revised/#p=1" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>-->
-            <!--</div>-->
-    <!--        <div style="position:relative;padding-top:max(60%,324px);width:100%;height:0;"><iframe style="position:absolute;border:none;width:100%;height:100%;left:0;top:0;" src="https://online.fliphtml5.com/rvsqb/PopeFest_Revised1/" title="PopeFest_Revised1" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" ></iframe></div>  -->
-    <!--    </div>-->
-    <!--</section>-->
-
     <section class="content-section">
         <div class="container">
             <h2>Community Partnership</h2>
@@ -391,32 +379,32 @@
             /* ------------------------------------------------------------------
                1. VIDEO LOGIC: CLICK TO PLAY WITH SOUND & AUTO-SCROLL DOWN
                ------------------------------------------------------------------ */
-            // const video = document.getElementById('event-video');
+            const video = document.getElementById('event-video');
             const mainContent = document.getElementById('main-content');
-            // const playOverlayBtn = document.getElementById('play-overlay-btn');
+            const playOverlayBtn = document.getElementById('play-overlay-btn');
             
             // Explicitly ensure the video is unmuted for when playback begins
-            // video.muted = false;
+            video.muted = false;
 
             // Handle clicking the big overlay button
-            // playOverlayBtn.addEventListener('click', () => {
-            //     video.play();
-            //     playOverlayBtn.classList.add('is-hidden'); // Smoothly hides the button
-            // });
+            playOverlayBtn.addEventListener('click', () => {
+                video.play();
+                playOverlayBtn.classList.add('is-hidden'); // Smoothly hides the button
+            });
             
-            // video.addEventListener('ended', () => {
-            //     // 1. Loop the video back to start
-            //     video.currentTime = video.duration;
-            //     video.pause();
+            video.addEventListener('ended', () => {
+                // 1. Loop the video back to start
+                video.currentTime = video.duration;
+                video.pause();
                 
-            //     // 2. Based on your original spec: mute it after one full playthrough
-            //     // video.muted = true; 
+                // 2. Based on your original spec: mute it after one full playthrough
+                // video.muted = true; 
 
-            //     // 3. Auto Scroll Check: Only scroll if user hasn't already scrolled down
-            //     if (window.scrollY < 100) {
-            //         mainContent.scrollIntoView({ behavior: 'smooth' });
-            //     }
-            // });
+                // 3. Auto Scroll Check: Only scroll if user hasn't already scrolled down
+                if (window.scrollY < 100) {
+                    mainContent.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
             
             /* ------------------------------------------------------------------
                2. ACCORDION / DROPDOWN TOGGLE LOGIC
