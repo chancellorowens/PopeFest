@@ -262,14 +262,15 @@
 <body>
     <section id="hero-section">
         <div class="video-wrapper">
-            <video id="event-video" playsinline>
-                <source src="https://codehs.com/uploads/6081c0aac6e859da2cfe774f61da38e7" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <img style="padding:20px" width=100% src="https://codehs.com/uploads/62eba74de6f0519ef077af363eb50909">
+            <!--<video id="event-video" playsinline>-->
+            <!--    <source src="https://codehs.com/uploads/6081c0aac6e859da2cfe774f61da38e7" type="video/mp4">-->
+            <!--    Your browser does not support the video tag.-->
+            <!--</video>-->
 
-            <button id="play-overlay-btn" class="play-overlay">
-                <span class="play-icon">▶</span>
-            </button>
+            <!--<button id="play-overlay-btn" class="play-overlay">-->
+            <!--    <span class="play-icon">▶</span>-->
+            <!--</button>-->
         </div>
     </section>
 
@@ -357,18 +358,6 @@
         </div>
     </section>
 
-    <!--<section class="content-section">-->
-    <!--    <div class="container">-->
-    <!--        <h2>Event Brochure</h2>-->
-    <!--        <p>Flip through our digital schedule and interactive guide below.</p>-->
-            
-            <!--<div class="flipbook-container">-->
-            <!--    <iframe src="https://online.fliphtml5.com/PopeFest/PopeFest_Revised/#p=1" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>-->
-            <!--</div>-->
-    <!--        <div style="position:relative;padding-top:max(60%,324px);width:100%;height:0;"><iframe style="position:absolute;border:none;width:100%;height:100%;left:0;top:0;" src="https://online.fliphtml5.com/rvsqb/PopeFest_Revised1/" title="PopeFest_Revised1" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" ></iframe></div>  -->
-    <!--    </div>-->
-    <!--</section>-->
-
     <section class="content-section">
         <div class="container">
             <h2>Community Partnership</h2>
@@ -380,9 +369,6 @@
         </div>
     </section>
     
-    
-
-
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             
@@ -407,10 +393,7 @@
                 video.currentTime = video.duration;
                 video.pause();
                 
-                // 2. Based on your original spec: mute it after one full playthrough
-                // video.muted = true; 
-
-                // 3. Auto Scroll Check: Only scroll if user hasn't already scrolled down
+                // 2. Auto Scroll Check: Only scroll if user hasn't already scrolled down
                 if (window.scrollY < 100) {
                     mainContent.scrollIntoView({ behavior: 'smooth' });
                 }
