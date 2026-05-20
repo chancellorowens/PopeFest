@@ -74,7 +74,7 @@
         
         .play-overlay {
             position: absolute;
-            top: 67%;
+            top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             background: rgba(0, 0, 0, 0.6);
@@ -263,8 +263,8 @@
 <body>
     <section id="hero-section">
         <div class="video-wrapper">
-            <!--<img style="padding:20px" width=100% src="https://codehs.com/uploads/c0937f4af9924133c276f8611b2dda2e">-->
-            <video id="event-video" playsinline>
+            <img id="event-image" style="padding:20px" width=100% src="pfimg.jpeg">
+            <video hidden id="event-video" playsinline>
                 <source src="pfvid.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -309,7 +309,7 @@
                         <p><b>Can middle school students attend?</b><br>Yes, but middle school and younger students must attend with a parent or guardian.</p>
                         <p><b>What happens if it rains?</b><br>PopeFest will continue rain or shine. However, if postponement becomes necessary, the official rain date is <b>Saturday, August 15, 2026.</b></p>
                         <p><b>Is there a clear bag policy?</b><br>Yes. To help maintain a safe environment, PopeFest will enforce a clear bag policy.</p>
-                        <p><b>Are footballs, sports equipment, or toys allowed?</b><br>No. PopeFest is a music festival, not an athletic event. Footballs, sports equipment, water guns, toy weapons, and other disruptive recreational items or activities are not permitted inside PopeFest. Any prohibited items will be confiscated.</p>
+                        <p><b>Are footballs, sports equipment, or toys allowed?</b><br>No. PopeFest is a music festival, not an athletic event. Footballs, sports equipment, water guns, toy weapons, and other disruptive recreational items or activities are not permitted inside PopeFest. Any prohibited items will be confiscated and made available for pickup at the end of the event.</p>
                         <p><b>What does seating look like?</b><br>All seating at PopeFest is General Admission seating and includes the option of both stadium and field seating. Seating is on a first come first serve basis and may not be reserved. For field seating, blankets or portable folding chairs are recommended.</p>
                         <p><b>Allowed / Not Allowed Items</b><br>
                             <ul>
@@ -380,6 +380,8 @@
                1. VIDEO LOGIC: CLICK TO PLAY WITH SOUND & AUTO-SCROLL DOWN
                ------------------------------------------------------------------ */
             const video = document.getElementById('event-video');
+            const image = document.getElementById('event-image');
+            
             const mainContent = document.getElementById('main-content');
             const playOverlayBtn = document.getElementById('play-overlay-btn');
             
@@ -388,7 +390,10 @@
 
             // Handle clicking the big overlay button
             playOverlayBtn.addEventListener('click', () => {
+                image.setAttribute("hidden", "");;
+                video.removeAttribute("hidden");
                 video.play();
+                
                 playOverlayBtn.classList.add('is-hidden'); // Smoothly hides the button
             });
             
