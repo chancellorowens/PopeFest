@@ -258,9 +258,9 @@ ol {
 .gallery-container {
     display: grid;
     /* Automatically creates columns that are at least 150px wide, up to 1 fraction of space */
-    grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
-    gap: 10px; /* Space between the images */
-    padding: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    /* gap: 10px; Space between the images */
+    /* padding: 10px; */
     width: 100%;
     box-sizing: border-box;
   }
@@ -273,7 +273,7 @@ ol {
 
   .gallery-item img {
     width: 100%;
-    max-width: 100px; /* Limits how big the images can get */
+    max-width: 200px; /* Limits how big the images can get */
     height: auto; /* Keeps original aspect ratio (prevents squaring off) */
     object-fit: contain; /* Ensures the image fits its bounds neatly */
   }
