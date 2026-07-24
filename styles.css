@@ -264,6 +264,15 @@ ol {
     width: 100%;
     box-sizing: border-box;
   }
+  .gallery-container-sponsor {
+    display: grid;
+    /* Automatically creates columns that are at least 150px wide, up to 1 fraction of space */
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px; /*Space between the images */
+    /* padding: 10px; */
+    width: 100%;
+    box-sizing: border-box;
+  }
 
   .gallery-item {
     display: flex;
