@@ -286,3 +286,17 @@ ol {
     height: auto; /* Keeps original aspect ratio (prevents squaring off) */
     object-fit: contain; /* Ensures the image fits its bounds neatly */
   }
+  .image-container {
+    display: flex;
+    flex-direction: column; /* Force vertical stacking */
+    align-items: center;    /* Center the images horizontally within the container */
+    width: 100%;
+  }
+  
+  .image-container img {
+    max-width: 650px; /* Cap size at 1000px */
+    width: 100%;       /* Allow image to shrink smoothly on smaller screens */
+    height: auto;      /* Keep image ratio intact */
+    margin: 0 auto;    /* Ensure image centering */
+    display: block;
+  }
